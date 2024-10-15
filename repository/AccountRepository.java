@@ -1,11 +1,12 @@
 package repository;
 
+import java.util.HashMap;
 import java.util.Map;
-import javax.security.auth.login.AccountException;
+import pojo.Account;
 
 public class AccountRepository {
-    
-    private Map<String, Account> datastore = new HashMap<>();
+
+    private final Map<String, Account> datastore = new HashMap<>();
 
     public void createAccount(Account account) {
         this.datastore.put(account.getId(), account.clone());
@@ -17,12 +18,10 @@ public class AccountRepository {
 
     public void updateAccount(Account account) {
         this.datastore.put(account.getId(), account.clone());
-
     }
 
     public void deleteAccount(String id) {
         this.datastore.remove(id);
-
     }
 
 }

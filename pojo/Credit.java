@@ -2,17 +2,24 @@ package pojo;
 
 import java.math.BigDecimal;
 
-public class Credit {
-    public static void main(String[] args) {
+public class Credit extends Account {
+    private BigDecimal credit;
 
+    public Credit(String id, BigDecimal credit) {
+        super(id);
+        this.credit = credit;
     }
-    
-    public void setCredit(BigDecimal){
+
+    public BigDecimal getCredit() {
+        return this.credit;
+    }
+
+    public void setCredit(BigDecimal credit) {
         this.credit = credit;
     }
 
     @Override
-    public Account clone() {
+    public Credit clone() {
         return new Credit(super.getId(), this.credit);
     }
 }

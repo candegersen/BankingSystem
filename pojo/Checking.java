@@ -20,9 +20,7 @@ public class Checking extends Account {
     }
 
     @Override
-    public Account clone() {
+    public Checking clone() {
         return new Checking(super.getId(), this.balance);
     }
 }
-    
-
